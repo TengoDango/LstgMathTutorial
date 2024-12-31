@@ -1,5 +1,5 @@
 # 设置PDF输出根目录
-$pdfOutputRootDir = "Bin"
+$pdfOutputRootDir = "bin"
 
 # 检查并创建PDF输出根目录（如果它不存在）
 if (-not (Test-Path -Path $pdfOutputRootDir)) {
