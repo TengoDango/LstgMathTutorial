@@ -1,0 +1,75 @@
+/// 模板文件
+
+/* 导入模块 */
+#import "@preview/cetz:0.3.1"
+#import "@preview/ctheorems:1.1.3": *
+
+/// 教程文档模板
+///
+/// - body (content):
+/// -> content
+#let math-tutorial(body) = {
+  // 页面尺寸属性
+  set text(size: 12pt)
+  set page(margin: 2cm)
+
+  // 大标题
+  show heading.where(level: 1): it => {
+    set align(center)
+    block(it.body, inset: 16pt)
+  }
+
+  // 小标题
+  show heading.where(level: 2): it => {
+    set align(center)
+    block(
+      [------ ] + it.body + [ ------],
+      inset: 5pt,
+    )
+  }
+
+  // 图表
+  show figure.where(kind: image): set figure(supplement: "图")
+  show figure.where(kind: table): set figure(supplement: "表")
+  set table(align: horizon, inset: 3mm)
+
+  // 有序列表
+  set enum(numbering: "(a)")
+
+  // 链接
+  show link: underline
+
+  // 定理
+  show: thmrules.with(qed-symbol: [证毕.])
+
+  body
+}
+
+/* 定理环境 */
+#let theorem = thmbox(
+  "theorem",
+  "定理",
+  fill: rgb("eeeeee"),
+).with(numbering: none)
+#let definition = thmbox(
+  "definition",
+  "定义",
+  fill: rgb("eeeeee"),
+).with(numbering: none)
+#let example = thmplain("example", "例")
+#let proof = thmproof("proof", "证明").with(numbering: none)
+
+/*--- 定义 ---*/
+
+/// 极坐标
+/// - r (content):
+/// - theta (content):
+/// -> content
+#let polar(r, theta) = $angle.l #r, #theta angle.r$
+
+/// 绘制一个点
+#let point(P, scale: 1) = cetz.draw.circle(
+  P,
+  radius: 1pt / scale,
+  stroke: 2pt,
+)
