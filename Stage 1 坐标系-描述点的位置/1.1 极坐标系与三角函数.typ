@@ -41,19 +41,19 @@
       grid((m, m), (n, n), stroke: gray)
       // 坐标轴
       line((m - 0.5, 0), (n + 0.5, 0), mark: (end: "straight"))
-      mcontent((n + 0.5, 0), $x$, "east")
+      mcontent((n + 0.5, 0), $x$, east)
       line((0, m - 0.5), (0, n + 0.5), mark: (end: "straight"))
-      mcontent((0, n + 0.5), $y$, "west")
+      mcontent((0, n + 0.5), $y$, west)
       // 刻度
       for i in range(m, n + 1) {
         if i == 0 { continue }
-        mcontent((i, 0), $#i$, "south-west")
-        mcontent((0, i), $#i$, "south-west")
+        mcontent((i, 0), $#i$, south-west)
+        mcontent((0, i), $#i$, south-west)
       }
       // OP
       let O = (0, 0)
-      mcontent(O, $O$, "south-west")
-      mcontent(P, $P$, "north-east")
+      mcontent(O, $O$, south-west)
+      mcontent(P, $P$, north-east)
       line(O, P)
       point(P)
       line((P.at(0), 0), P, (0, P.at(1)), stroke: (dash: "dashed"))
@@ -92,15 +92,15 @@
       line(P, O, (3.5, 0), mark: (end: "straight"))
       // 刻度
       for i in (1, 2, 3) {
-        mcontent((i, 0), $#i$, "south-west")
+        mcontent((i, 0), $#i$, south-west)
       }
       // 标注
-      mcontent(O, $O$, "south-west")
-      mcontent(P, $P$, "north-east")
-      mcontent((3.5, 0), $0degree$, "east")
-      mcontent((0, 3), $90degree$, "north")
-      mcontent((-3, 0), $180degree$, "west")
-      mcontent((0, -3), $270degree$, "south")
+      mcontent(O, $O$, south-west)
+      mcontent(P, $P$, north-east)
+      mcontent((3.5, 0), $0degree$, east)
+      mcontent((0, 3), $90degree$, north)
+      mcontent((-3, 0), $180degree$, west)
+      mcontent((0, -3), $270degree$, south)
     })
   ] <polar-coord>
 
@@ -173,19 +173,19 @@ $polar(-r, theta)$ 和 $polar(r, theta + 180degree)$
         name: "arc",
       )
       // 标记
-      mcontent((max, 0), $x$, "east")
-      mcontent((0, max), $y$, "west")
-      mcontent((-r, 0), $-1$, "south-west")
-      mcontent((r, 0), $1$, "south-east")
-      mcontent((0, -r), $-1$, "south-east")
-      mcontent((0, r), $1$, "north-east")
-      mcontent(O, $O$, "south-west")
+      mcontent((max, 0), $x$, east)
+      mcontent((0, max), $y$, west)
+      mcontent((-r, 0), $-1$, south-west)
+      mcontent((r, 0), $1$, south-east)
+      mcontent((0, -r), $-1$, south-east)
+      mcontent((0, r), $1$, north-east)
+      mcontent(O, $O$, south-west)
       mcontent(
         P,
         $(cos alpha, sin alpha) = P$,
-        "north-west",
+        north-west,
       )
-      mcontent("arc.45deg", $alpha$, "north-east")
+      mcontent("arc.45deg", $alpha$, north-east)
     })
   ] <sine>
 ]
@@ -239,13 +239,13 @@ $
       point(A)
       point(B)
       line(A, B)
-      mcontent(A, $A=(x_1,y_1)$, "west", pad: 1.5mm)
-      mcontent(B, $B=(x_2,y_2)$, "east", pad: 1.5mm)
-      mcontent((A, 50%, B), $r$, "north")
+      mcontent(A, $A=(x_1,y_1)$, west, pad: 1.5mm)
+      mcontent(B, $B=(x_2,y_2)$, east, pad: 1.5mm)
+      mcontent((A, 50%, B), $r$, north)
       // 水平铅直线
       set-style(stroke: (dash: "dashed"))
       line(A, (B.at(0), 0), B)
-      mcontent((B.at(0), 0), $C$, "east")
+      mcontent((B.at(0), 0), $C$, east)
     })
   ] <square-length>
 ]
@@ -305,15 +305,15 @@ $cos theta, sin theta$
     line((min, 0), (max, 0), mark: (end: "straight"))
     line((0, min), (0, max), mark: (end: "straight"))
     circle(O, radius: r)
-    mcontent((max, 0), $x$, "east")
-    mcontent((0, max), $y$, "west")
-    mcontent((r, 0), $1$, "south-east")
-    mcontent((-r, 0), $-1$, "south-west")
-    mcontent(O, $O$, "south-west")
+    mcontent((max, 0), $x$, east)
+    mcontent((0, max), $y$, west)
+    mcontent((r, 0), $1$, south-east)
+    mcontent((-r, 0), $-1$, south-west)
+    mcontent(O, $O$, south-west)
     line(O, P)
     point(P)
     arc((r-arc, 0), start: 0deg, stop: a, radius: r-arc, name: "arc")
-    mcontent("arc", $theta$, "north-east")
+    mcontent("arc", $theta$, north-east)
   }
   #figure(
     caption: [反三角函数],
@@ -329,7 +329,7 @@ $cos theta, sin theta$
         mcontent(
           "line.end",
           $x = x_0$,
-          "south-east"
+          south-east
         )
       }),
       /* arcsin */
@@ -341,7 +341,7 @@ $cos theta, sin theta$
         mcontent(
           "line.end",
           $y = y_0$,
-          "north"
+          north
         )
       }),
       /* arctan */
@@ -351,7 +351,7 @@ $cos theta, sin theta$
         let T = (r, r * calc.tan(a))
         line(P, T)
         point(T)
-        mcontent(T, $(1,k)$, "north-east")
+        mcontent(T, $(1,k)$, north-east)
       }),
     ),
   ) <arcsin>
@@ -387,9 +387,5 @@ $
 $
 
 == 要点总结
-#set enum(numbering: "1.")
-+ 在极坐标系下表示位置
-+ 勾股定理和三角函数
-+ 直角坐标与极坐标的转换
 
-// TODO 习题
+== 习题

@@ -79,16 +79,14 @@
   stroke: 2pt,
 )
 
-#let direction-reverse-dict = (
-  north: "south",
-  south: "north",
-  west: "east",
-  east: "west",
-  north-west: "south-east",
-  north-east: "south-west",
-  south-west: "north-east",
-  south-east: "north-west",
-)
+#let north = "south"
+#let south = "north"
+#let west = "east"
+#let east = "west"
+#let north-west = "south-east"
+#let north-east = "south-west"
+#let south-west = "north-east"
+#let south-east = "north-west"
 
 /// 简化 content
 #let mcontent(
@@ -99,7 +97,7 @@
 ) = cetz.draw.content(
   position,
   body,
-  anchor: direction-reverse-dict.at(anchor),
+  anchor: anchor,
   padding: pad,
 )
 
