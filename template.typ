@@ -9,9 +9,9 @@
 /// - body (content):
 /// -> content
 #let math-tutorial(body) = {
-  // 页面尺寸属性
-  set text(size: 12pt)
-  set page(margin: 2cm)
+  // 页面属性
+  set text(font: ("Times New Roman", "Source Han Serif SC"))
+  set page(margin: 1.5cm, numbering: "1")
 
   // 大标题
   show heading.where(level: 1): it => {
@@ -23,7 +23,7 @@
   show heading.where(level: 2): it => {
     set align(center)
     block(
-      [------ ] + it.body + [ ------],
+      [--------- ] + it.body + [ ---------],
       inset: 5pt,
     )
   }
@@ -32,6 +32,7 @@
   show figure.where(kind: image): set figure(supplement: "图")
   show figure.where(kind: table): set figure(supplement: "表")
   set table(align: horizon, inset: 3mm)
+  show figure.caption: set text(font: ())
 
   // 有序列表
   set enum(numbering: "(a)")
@@ -40,7 +41,11 @@
   show link: underline
 
   // 定理
-  show: thmrules.with(qed-symbol: [证毕.])
+  show: thmrules
+
+  // 大于号小于号样式
+  show sym.lt.eq: sym.lt.eq.slant
+  show sym.gt.eq: sym.gt.eq.slant
 
   body
 }
@@ -73,3 +78,47 @@
   radius: 1pt / scale,
   stroke: 2pt,
 )
+
+#let direction-reverse-dict = (
+  north: "south",
+  south: "north",
+  west: "east",
+  east: "west",
+  north-west: "south-east",
+  north-east: "south-west",
+  south-west: "north-east",
+  south-east: "north-west",
+)
+
+/// 简化 content
+#let mcontent(
+  position,
+  body,
+  anchor,
+  pad: 1mm,
+) = cetz.draw.content(
+  position,
+  body,
+  anchor: direction-reverse-dict.at(anchor),
+  padding: pad,
+)
+
+/// 极坐标网格
+/// - radius (float):
+/// - angle (array):
+/// - step-radius (float):
+/// - step-angle (angle):
+/// ->
+#let polar-grid(radius, angle, step-radius, step-angle) = {
+  import cetz.draw: *
+  let r = 0
+  while r <= radius {
+    circle((0, 0), radius: r, stroke: gray)
+    r += step-radius
+  }
+  let (from, to) = angle
+  while from <= to {
+    line((0, 0), (from, radius), stroke: gray)
+    from += step-angle
+  }
+}

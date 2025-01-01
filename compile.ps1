@@ -8,8 +8,14 @@ if (-not (Test-Path -Path $pdfOutputRootDir)) {
 
 # 获取当前目录及其子目录下的所有 .typ 文件
 $typFiles = Get-ChildItem -Path . -Filter *.typ -Recurse -File
+$currentDir = Get-Location
 
 foreach ($file in $typFiles) {
+    # 跳过模板文件
+    if ($file.Name -eq 'template.typ') {
+        continue
+    }
+
     # 计算相对于当前目录的相对路径
     $relativePath = $file.FullName.Substring($PWD.Path.Length).TrimStart('\', '/')
 
@@ -29,7 +35,7 @@ foreach ($file in $typFiles) {
     Write-Host "Output PDF: $outputPdf"
 
     # 编译Typst文件到PDF
-    & typst compile $file.FullName "$outputPdf"
+    & typst compile $file.FullName "$outputPdf" --root $currentDir
 
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "Failed to compile $($file.FullName)"
