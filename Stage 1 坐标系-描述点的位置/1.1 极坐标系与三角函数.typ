@@ -135,7 +135,7 @@ $polar(-r, theta)$ 和 $polar(r, theta + 180degree)$
 ]
 
 在同余意义下, 对于除极点外的其他点, 极坐标是唯一的.
-同余的概念将在 `1.ex同余与风车弹` 一节进一步介绍.
+同余的概念将在 `EX.1 同余` 一节进一步介绍.
 
 == 三角函数
 
@@ -156,7 +156,7 @@ $polar(-r, theta)$ 和 $polar(r, theta + 180degree)$
   #figure(caption: [三角函数])[
     #cetz.canvas({
       import cetz.draw: *
-      let (min, max, r) = (-3, 3, 2)
+      let (min, max, r) = (-2, 2, 1.2)
       let (O, P) = ((0, 0), (120deg, r))
       let r-arc = 3mm
       // 图形
@@ -388,16 +388,8 @@ $
 
 == 要点总结
 #set enum(numbering: "1.")
-+ 极坐标的定义
++ 在极坐标系下表示位置
 + 勾股定理和三角函数
 + 直角坐标与极坐标的转换
 
-== 习题
-
-#set table(stroke: (_, y) => if y == 0 { (bottom: 1pt) })
-
-// + 三角函数表
-// + 反弹方向
-// + 直角坐标极坐标转换 - 原点不重合
-// + 直线与圆的交点情况
-// + 求方位角程序实现
+// TODO 习题
