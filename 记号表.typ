@@ -3,23 +3,26 @@
 
 #let s0 = []
 #let s1-1 = [1.1 极坐标系与三角函数]
+#let s1-2 = [1.2 向量 ------ 点的运算]
 #set align(center)
 #table(
   columns: 4,
   table.header([*名称*], [*记号*], [*说明*], [*对应章节*]),
-  [距离 \ 极径],
-  $ abs(A B) \ abs(P) $,
+  [距离 \ 极径 \ 模长],
+  $ abs(A B) \ abs(P) \ abs(arrow(r)) $,
   [
     点 $A$ 与点 $B$ 的距离 \
     点 $P$ 与极点的距离 \
+    向量 $arrow(r)$ 的长度 \
   ],
   s1-1,
 
-  [方位角 \ 极角],
-  $ angle(A B) \ angle(P) $,
+  [方位角 \ 极角 \ 方向角],
+  $ angle(A B) \ angle(P) \ angle(arrow(r)) $,
   [
     点 $B$ 相对点 $A$ 的方位角 \
     点 $P$ 相对极点的方位角 \
+    向量 $arrow(r)$ 对应的平移方向角 \
   ],
   s1-1,
 
