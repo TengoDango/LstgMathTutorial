@@ -1,7 +1,7 @@
 #import "../template.typ": *
 #show: content => math-tutorial(content)
 
-= 1.1 极坐标系与三角函数
+= #s1-1
 
 == 极坐标系
 
@@ -386,6 +386,4 @@ $
   theta equiv angle(x,y). \
 $
 
-== 要点总结
-
-== 习题
+#conclude[]

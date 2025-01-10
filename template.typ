@@ -42,16 +42,39 @@
   show link: set text(font: "Consolas")
 
   // 定理
-  show: thmrules
+  show: thmrules.with(qed-symbol: "")
 
   // 大于号小于号样式
   show sym.lt.eq: sym.lt.eq.slant
   show sym.gt.eq: sym.gt.eq.slant
 
+  // 平行符号样式
+  show sym.parallel: sym.slash.double
+
+  // 矩阵样式
+  set math.mat(delim: "(")
+
   body
 }
 
+/// 总结 & 习题
+#let conclude(..body) = {
+  let body = body.pos()
+  let n = body.len()
+  let conclude = if n >= 1 {body.at(0)} else []
+  let homework = if n >= 2 {body.at(1)} else []
+  if conclude != [] [
+    == 要点总结
+    #conclude
+  ]
+  if homework != [] [
+    == 习题
+    #homework
+  ]
+}
+
 /* 定理环境 */
+#let box-gray = rgb("eeeeee")
 #let theorem = thmbox(
   "theorem",
   "定理",
@@ -60,12 +83,23 @@
 #let definition = thmbox(
   "definition",
   "定义",
-  fill: rgb("eeeeee"),
+  fill: box-gray,
 ).with(numbering: none)
-#let example = thmplain("example", "例")
+#let example = thmplain("example", "例").with(numbering: none)
 #let proof = thmproof("proof", "证明").with(numbering: none)
 
 /*--- 定义 ---*/
+
+#let pm = sym.plus.minus
+#let mp = sym.minus.plus
+#let rr = $arrow(r)$
+#let ee = $arrow(e)$
+#let ff = $arrow(f)$
+#let gg = $arrow(g)$
+#let hh = $arrow(h)$
+#let ii = $hat(i)$
+#let jj = $hat(j)$
+#let kk = $hat(k)$
 
 /// 极坐标
 /// - r (content):
@@ -121,3 +155,9 @@
     from += step-angle
   }
 }
+
+/* 文档标题 */
+#let s0 = []
+#let s1-1 = [1.1 极坐标系与三角函数]
+#let s1-2 = [1.2 向量 ------ 可运算的 "点"]
+#let s1-3 = [1.3 线性变换与仿射坐标系]
