@@ -2,6 +2,7 @@
 
 /* 导入模块 */
 #import "@preview/cetz:0.3.1"
+#import "@preview/cetz-plot:0.1.0": plot, chart, axes
 #import "@preview/ctheorems:1.1.3": *
 
 /// 教程文档模板
@@ -61,8 +62,8 @@
 #let conclude(..body) = {
   let body = body.pos()
   let n = body.len()
-  let conclude = if n >= 1 {body.at(0)} else []
-  let homework = if n >= 2 {body.at(1)} else []
+  let conclude = if n >= 1 { body.at(0) } else []
+  let homework = if n >= 2 { body.at(1) } else []
   if conclude != [] [
     == 要点总结
     #conclude
@@ -93,6 +94,8 @@
 #let pm = sym.plus.minus
 #let mp = sym.minus.plus
 #let rr = $arrow(r)$
+#let vv = $arrow(v)$
+#let aa = $arrow(a)$
 #let ee = $arrow(e)$
 #let ff = $arrow(f)$
 #let gg = $arrow(g)$
@@ -100,6 +103,8 @@
 #let ii = $hat(i)$
 #let jj = $hat(j)$
 #let kk = $hat(k)$
+
+#let coord(x, t) = [$x$-$t$]
 
 /// 极坐标
 /// - r (content):
@@ -161,3 +166,10 @@
 #let s1-1 = [1.1 极坐标系与三角函数]
 #let s1-2 = [1.2 向量 ------ 可运算的 "点"]
 #let s1-3 = [1.3 线性变换与仿射坐标系]
+#let s2-1 = [2.1 运动学基础]
+#let s2-2 = [2.2 基本的运动模型]
+#let s2-3 = [2.3 运动的合成与分解]
+#let s2-4 = [2.4 曲线与方程]
+#let s2-5 = [2.5 常见曲线简析]
+#let s3-1 = [3.1 三维向量和坐标系]
+#let s3-2 = [3.2 定轴旋转]
