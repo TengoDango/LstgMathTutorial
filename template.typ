@@ -2,7 +2,7 @@
 
 /* 导入模块 */
 #import "@preview/cetz:0.3.1"
-#import "@preview/cetz-plot:0.1.0": plot, chart, axes
+#import "@preview/cetz-plot:0.1.0"
 #import "@preview/ctheorems:1.1.3": *
 
 /// 教程文档模板
@@ -104,7 +104,7 @@
 #let jj = $hat(j)$
 #let kk = $hat(k)$
 
-#let coord(x, t) = [$x$-$t$]
+#let coord(x, t) = x + "-" + t
 
 /// 极坐标
 /// - r (content):
@@ -173,3 +173,6 @@
 #let s2-5 = [2.5 常见曲线简析]
 #let s3-1 = [3.1 三维向量和坐标系]
 #let s3-2 = [3.2 定轴旋转]
+#let ex-1 = [EX.1 同余]
+#let ex-2 = [EX.2 弧度制]
+#let ex-3 = [EX.3 三角函数公式]
