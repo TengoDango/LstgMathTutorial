@@ -24,7 +24,6 @@
 
   // 链接
   show link: underline
-  show link: set text(font: "Consolas")
 
   // 定理
   show: thmrules.with(qed-symbol: "")

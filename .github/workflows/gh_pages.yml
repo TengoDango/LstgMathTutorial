@@ -48,13 +48,15 @@ jobs:
         run: |
           cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
           shiroa build --font-path assets/fonts .
+          mkdir -p ./github-pages/dist
+          mv ./dist ./github-pages/dist
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload `/github-pages` sub directory
-          path: './dist'
+          path: './github-pages/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
