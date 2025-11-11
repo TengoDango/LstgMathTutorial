@@ -1,5 +1,5 @@
 #import "../template.typ": *
-#show: content => math-tutorial(content)
+#show: math-tutorial
 
 = #s1-3
 
