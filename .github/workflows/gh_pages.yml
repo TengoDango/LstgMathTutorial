@@ -47,7 +47,7 @@ jobs:
       - name: Build Book
         run: |
           cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
-          cargo run --release --bin shiroa -- build --font-path assets/fonts .
+          shiroa build --font-path assets/fonts .
           mkdir -p ./github-pages/dict/
           mv ./dist/ ./github-pages/dist/
       - name: Setup Pages
