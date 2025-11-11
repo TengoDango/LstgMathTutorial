@@ -55,6 +55,7 @@ jobs:
       #     shiroa build --font-path assets/fonts --path-to-root /shiroa/ -w . github-pages/docs --mode static-html
       - name: Build Book (TD Attempt)
         run: |
+          cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
           shiroa build -w . github-pages/docs
       - name: Setup Pages
         uses: actions/configure-pages@v5
