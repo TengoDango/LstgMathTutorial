@@ -56,7 +56,7 @@ jobs:
       - name: Build Book (TD Attempt)
         run: |
           cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
-          shiroa build -w . github-pages/docs
+          shiroa build
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
