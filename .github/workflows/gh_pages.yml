@@ -48,6 +48,7 @@ jobs:
         run: |
           cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
           shiroa build --font-path assets/fonts .
+      - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
