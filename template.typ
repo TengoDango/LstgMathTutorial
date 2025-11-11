@@ -1,7 +1,7 @@
 /// 模板文件
 
 /* 导入模块 */
-#import "@preview/cetz:0.3.1"
+#import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.0"
 #import "@preview/ctheorems:1.1.3": *
 
@@ -11,7 +11,7 @@
 #let math-tutorial(body) = {
   // 页面属性
   set text(font: ("Times New Roman", "Source Han Sans SC"))
-  set page(margin: 1.5cm, numbering: "1")
+  // set page(margin: 1.5cm, numbering: "1")
 
   // 大标题
   show heading.where(level: 1): it => {
@@ -35,7 +35,7 @@
   show figure.where(kind: image): set figure(supplement: "图")
   show figure.where(kind: table): set figure(supplement: "表")
   set table(align: horizon, inset: 3mm)
-  show figure.caption: set text(font: ())
+  show figure.caption: set text(font: ("Source Han Sans SC"))
 
   // 有序列表
   set enum(numbering: "(a)")
