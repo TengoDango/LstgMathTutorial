@@ -47,7 +47,7 @@ jobs:
       - name: Build Book
         run: |
           cargo install --git https://github.com/Myriad-Dreamin/shiroa --locked shiroa
-          shiroa build --font-path assets/fonts --path-to-root /lstg-math-tutorial/ -w .
+          shiroa build --font-path assets/fonts --path-to-root /LstgMathTutorial/ --root .
           mkdir -p ./github-pages/dist
           mv ./dist/ ./github-pages/dist/
       - name: Setup Pages
