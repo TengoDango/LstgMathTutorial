@@ -37,11 +37,11 @@
 
 // Fonts
 #let main-font = (
-  "Times New Roman",
+  "Liberation Serif",
   "Source Han Sans SC"
 )
 #let code-font = (
-  "Consolas",
+  "Fira Code",
   "Source Han Sans SC"
 )
 
