@@ -37,16 +37,12 @@
 
 // Fonts
 #let main-font = (
-  "Charter",
-  "Source Han Serif SC",
-  // "Source Han Serif TC",
-  // shiroa's embedded font
-  "Libertinus Serif",
+  "Times New Roman",
+  "Source Han Sans SC"
 )
 #let code-font = (
-  "BlexMono Nerd Font Mono",
-  // shiroa's embedded font
-  "DejaVu Sans Mono",
+  "Consolas",
+  "Source Han Sans SC"
 )
 
 // Sizes

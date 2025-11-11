@@ -1,7 +1,10 @@
-#import "../template.typ": *
-#show: math-tutorial
+#import "/templates/math-template.typ": *
+#import "/book.typ": book-page
 
-= #s1-3
+#show: book-page.with(title: "LuaSTG 基础数学")
+#show: content => math-tutorial(content)
+
+= 1.4 #s1-4
 
 弹幕制作经常涉及到平移, 旋转, 缩放等变换,
 这些基础的变换以及它们组合而得的变换有着怎样的共性?

@@ -2,34 +2,16 @@
 
 /* 导入模块 */
 #import "@preview/cetz:0.4.2"
-#import "@preview/cetz-plot:0.1.0"
+#import "@preview/cetz-plot:0.1.3"
 #import "@preview/ctheorems:1.1.3": *
+#import "/index.typ": *
 
 /// 教程文档模板
 /// - body (content):
 /// -> content
 #let math-tutorial(body) = {
-  // 页面属性
-  set text(font: ("Times New Roman", "Source Han Sans SC"))
-  // set page(margin: 1.5cm, numbering: "1")
-
-  // 大标题
-  show heading.where(level: 1): it => {
-    set align(center)
-    block(it.body, inset: 16pt)
-  }
-
-  // 小标题
-  show heading.where(level: 2): it => {
-    set align(center)
-    block([--------- ] + it.body + [ --------- ], inset: 5pt)
-  }
-
   // 强调
   show strong: set text(blue)
-
-  // 代码块
-  show raw: set text(font: ("Consolas", "Source Han Sans SC"))
 
   // 图表
   show figure.where(kind: image): set figure(supplement: "图")
@@ -120,7 +102,7 @@
 /// - r (content):
 /// - theta (content):
 /// -> content
-#let polar(r, theta) = $angle.l #r, #theta angle.r$
+#let polar(r, theta) = $chevron.l #r, #theta chevron.r$
 
 /// 绘制若干点
 #let point(..points, scale: 1) = {
@@ -178,21 +160,3 @@
 #let spellcard(sign, name) = [
   #sign$ceil.l$#name$floor.r$
 ]
-
-/* 文档标题 */
-#let s0 = ""
-#let s1-1 = "1.1 极坐标系与三角函数"
-#let s1-2 = "1.2 三角函数公式"
-#let s1-3 = "1.3 平面向量"
-#let s1-4 = "1.4 线性变换与仿射坐标系"
-#let s2-1 = "2.1 运动学基础"
-#let s2-2 = "2.2 基本的运动模型"
-#let s2-3 = "2.3 运动的合成与分解"
-#let s2-4 = "2.4 曲线与方程"
-#let s2-5 = "2.5 常见曲线简析"
-#let s3-1 = "3.1 三维向量和坐标系"
-#let s3-2 = "3.2 定轴旋转"
-#let ex-1 = "EX.1 同余"
-#let ex-2 = "EX.2 弧度制"
-#let ex-3 = "EX.3 反三角函数"
-#let ex-4 = "EX.4 概率论"

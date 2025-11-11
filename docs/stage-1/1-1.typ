@@ -1,7 +1,10 @@
-#import "../template.typ": *
-#show: math-tutorial
+#import "/templates/math-template.typ": *
+#import "/book.typ": book-page
 
-= #s1-1
+#show: book-page.with(title: "LuaSTG 基础数学")
+#show: content => math-tutorial(content)
+
+= 1.1 #s1-1
 
 == 极坐标系
 

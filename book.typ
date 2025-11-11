@@ -1,4 +1,5 @@
 #import "@preview/shiroa:0.3.0": *
+#import "index.typ": *
 
 #show: book
 
@@ -7,15 +8,19 @@
   authors: ("TengoDango",),
   repository: "https://github.com/TengoDango/LstgMathTutorial",
   summary: [
-    #prefix-chapter("前言 (看我! ).typ")[前言]
-    = Stage 1 坐标系-描述点的位置
-    - #chapter("Stage 1 坐标系-描述点的位置/1.1 极坐标系与三角函数.typ")[1.1 极坐标系与三角函数]
-    - #chapter("Stage 1 坐标系-描述点的位置/1.2 三角函数公式.typ")[1.2 三角函数公式]
-    - #chapter("Stage 1 坐标系-描述点的位置/1.3 平面向量.typ")[1.3 平面向量]
-    - #chapter("Stage 1 坐标系-描述点的位置/1.4 线性变换与仿射坐标系.typ")[1.4 线性变换与仿射坐标系]
-    = Stage 2 运动与曲线
-    - #chapter("Stage 2 运动与曲线/2.1 运动学基础.typ")[2.1 运动学基础]
-    - #chapter("Stage 2 运动与曲线/2.2 基本的运动模型.typ")[2.2 基本的运动模型]
+    #prefix-chapter("docs/preface.typ", strong[前言])
+    = #s1
+    - #chapter("docs/stage-1/1-1.typ", s1-1, section: "1.1")
+    - #chapter("docs/stage-1/1-2.typ", s1-2, section: "1.2")
+    - #chapter("docs/stage-1/1-3.typ", s1-3, section: "1.3")
+    - #chapter("docs/stage-1/1-4.typ", s1-4, section: "1.4")
+    = #s2
+    - #chapter("docs/stage-2/2-1.typ", s2-1, section: "2.1")
+    = #ex
+    - #chapter("docs/stage-ex/ex-3.typ", ex-3, section: none)
+    = 附录
+    - #suffix-chapter("docs/notes-table.typ")[记号表]
+    - #suffix-chapter("docs/answers.typ")[习题参考答案]
   ],
 )
 

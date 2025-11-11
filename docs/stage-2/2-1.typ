@@ -1,7 +1,10 @@
-#import "../template.typ": *
-#show: math-tutorial
+#import "/templates/math-template.typ": *
+#import "/book.typ": book-page
 
-= #s2-1
+#show: book-page.with(title: "LuaSTG 基础数学")
+#show: content => math-tutorial(content)
+
+= 2.1 #s2-1
 
 这一章我们将讨论点的运动以及曲线的表示.
 相信读者已经了解了一些相关的知识

@@ -1,5 +1,8 @@
-#import "template.typ": *
-#show: math-tutorial
+#import "/templates/math-template.typ": *
+#import "/book.typ": book-page
+
+#show: book-page.with(title: "LuaSTG 基础数学")
+#show: content => math-tutorial(content)
 
 = 前言
 

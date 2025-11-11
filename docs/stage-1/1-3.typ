@@ -1,12 +1,15 @@
-#import "../template.typ": *
-#show: math-tutorial
+#import "/templates/math-template.typ": *
+#import "/book.typ": book-page
+
+#show: book-page.with(title: "LuaSTG 基础数学")
+#show: content => math-tutorial(content)
 
 #let aa = $arrow(a)$
 #let bb = $arrow(b)$
 #let cc = $arrow(c)$
 #let dd = $arrow(d)$
 
-= #s1-3
+= 1.3 #s1-3
 
 弹幕制作中涉及的许多物理量,
 比如位移, 平移量, 速度, 加速度,
